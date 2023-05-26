@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'RetroCustom';
+    src: url(Fonts/RetroBoldy-Regular.ttf);
+}
+*{
+    padding: 0;
+    margin:0;
+    text-decoration: none;
+    box-sizing:border-box;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 20vh;
+    background-color: rgb(255, 255, 255);
+    font-family: "Montserrat", Times;
+}
+.logo{
+    color: rgb(69, 69, 69);
+    font-family: "RetroCustom";
+    font-size: 45px;
+    letter-spacing: 2px;
+}
+.nav-links{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    justify-content: space-around;
+    width: 30%;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links a{
+    color: rgb(69, 69, 69);
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.burger div{
+    width: 30px;
+    height: 4px;
+    background-color:rgb(69, 69, 69);
+    margin: 5px;
+}
+
+@media screen and (max-width:1024px){
+    .nav-links{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 18vh;
+        background-color: rgb(216, 216, 216);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+    }
+
+
+.nav-active{
+    transform: translateX(0%);
+}
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
